@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<body>
+    <canvas id='canvas'></canvas>
+    <script>
+        var x=0;
+        var y=0;
+        var srcX;
+        var srcY;
+        var width=36;
+        var height=36;
+        var current_frame=0;
+        var r_frame=6;
+        var warrior=new Image();
+        warrior.src="../images/militaWarrior.png";
+        var rWarrior=new Image();
+        rWarrior.src="../images/rWarrior.png";
+        var canvas =document.getElementById('canvas');
+        canvas.width=500;
+        canvas.height=500;
+        var ctx=canvas.getContext('2d');
+        
+        function updateFrame(){
+            current_frame= ++current_frame % 6;
+            srcX=current_frame*width;
+            srcY=height;
+            ctx.clearRect(x,y,width,height);
+        }
+        function reverse_updateFrame(){
+           r_frame= (r_frame+5) % 6;
+            
+            srcX=r_frame*width;
+            srcY=height;
+            ctx.clearRect(x,y,width,height);
+        }
+        function drawImage(){
+            updateFrame();
+            ctx.drawImage(warrior, srcX, srcY, width, height, x, y, width, height);
+        }
+        function rdrawImage(){
+            reverse_updateFrame();
+            ctx.drawImage(rWarrior, srcX, srcY, width, height, x, y, width, height);
+        }
+        setInterval(function(){
+            rdrawImage();
+        }, 200);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Death Screen</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background-color: #000000;
+  font-family: Arial;
+  margin: 0;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {background-color: grey;}
+.button1:hover {background-color: darkslategray;}
+
+.button2 {background-color: grey;}
+.button2:hover {background-color: darkslategray;}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  color: grey;
+  font-size: 30px;
+}
+
+.content {padding:20px;}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>You Died!</h1>
+  <p>You have failed your quest. Try again?</p>
+  <button class="button button1" onclick="location.href='../jsp/level3.jsp'">Retry</button>
+  <button class="button button2" onclick="location.href='../jsp/home.jsp'">Home</button>
+</div>
+
+</body>
+</html>
